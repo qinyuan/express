@@ -1,0 +1,51 @@
+table {
+	font-size: 11pt;
+}
+
+tr {
+	height: 30px;
+}
+
+.hid {
+	color: #FF0000;
+	font-size: 11pt;
+	display: none;
+}
+
+th.nar {
+	width: 40px;
+}
+
+th.mid {
+	width: 70px;
+}
+
+th.wide {
+	width: 90px;
+}
+
+th.wider {
+	width: 120px;
+}
+
+th.widest {
+	width: 200px;
+}
+
+#pageNumSelect {
+	width: 50px;
+}
+
+div#pageInfo {
+	position: relative;
+}
+
+div.link {
+	position: absolute;
+	top: 0;
+	right: 20px;
+}
+
+td.handle img {
+	cursor: pointer;
+}

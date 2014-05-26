@@ -1,0 +1,1 @@
+$('input.dateInput').click(WdatePicker);

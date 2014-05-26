@@ -1,0 +1,76 @@
+div{
+	position: absolute;
+}
+
+div.company {
+	top: 75px;
+	left: 250px;
+	font-weight: bolder;
+	font-size: 55pt;
+	color: #ccddff;
+	padding: 15px;
+}
+
+div.input {
+	top: 350px;
+	left: 70px;
+	font-size: 25px;
+	padding: 15px;
+}
+
+div.transparent, div.colorDivBack {
+	border-radius: 20px;
+	background-color: darkgreen;
+	width: 400px;
+	height: 150px;
+}
+
+div.colorDivBack {
+	display: none;
+}
+
+div.transparent {
+	filter: alpha(Opacity=80);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+div.contact {
+	top: 460px;
+	left: 570px;
+	font-size: 30px;
+	text-align: left;
+	padding: 15px;
+	color: #ccddff;
+}
+
+td {
+	padding: 5px;
+}
+
+div.input td.label {
+	text-align: right;
+	color: yellow;
+}
+
+div.input td.submit {
+	text-align: center;
+}
+
+div.contact td {
+	vertical-align: top;
+}
+
+input.text {
+	font-size: 25px;
+	width: 200px;
+	border: 2px solid white;
+}
+
+input#submit {
+	font-size: 30px;
+	width: 300px;
+	background-color: #99bbff;
+	border-color: #99bbff;
+	font-weight: bold;
+}

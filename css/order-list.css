@@ -1,0 +1,17 @@
+#datePicker {
+	width: 100px;
+}
+
+input#startDate, input#endDate {
+	width: 80px;
+}
+
+#searchDiv {
+	position: absolute;
+	top: 0px;
+	right: 250px;
+}
+
+#searchSpan {
+	vertical-align: 30%;
+}

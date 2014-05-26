@@ -1,0 +1,38 @@
+input, select {
+	font-size: 12pt;
+}
+
+td {
+	padding: 5px;
+}
+
+table {
+	text-align: left;
+}
+
+form {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 620px;
+}
+
+table.formInput {
+	background-color: #ccccff;
+	padding: 12px;
+	border-radius: 20px;
+}
+
+table.formInput input{
+	width: 200px;	
+}
+
+form > input {
+	color: #fff;
+	background-color: #47a447;
+	border: 2px solid #398439;
+	font-size: 16pt;
+	padding: 5px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+}

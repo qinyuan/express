@@ -1,0 +1,100 @@
+div.body {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	width: 1000px;
+}
+
+div#background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+}
+
+div#background > img {
+	height: 100%;
+	width: 100%;
+	border: 0;
+}
+
+div {
+	position: relative;
+}
+
+span.gray {
+	color: gray;
+}
+
+div.header {
+	position: fixed;
+	height: 30px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #f3f3f3;
+	border-bottom: 1px solid #e5e5e5;
+	padding: 10px;
+	z-index: 6;
+}
+
+div.header > div {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.exit {
+	position: absolute;
+	font-size: 10pt;
+	right: 0px;
+	top: 3px;
+}
+
+div.exit span {
+	padding: 5px;
+	border-radius: 7px;
+}
+
+div.exit a {
+	color: black;
+}
+
+div.content {
+	top: 60px;
+}
+
+div.contentBack {
+	position: fixed;
+	top: 0;
+	width: 1050px;
+	margin-left: -25px;
+	bottom: 0;
+	background-color: white;
+}
+
+div.editPassword {
+	position: absolute;
+	top: 200px;
+	right: 270px;
+	background-color: #AFEEEE;
+	border: 4px solid #40E0D0;
+	padding: 20px;
+	z-index: 7;
+	display: none;
+}
+
+div.editPassword td {
+	text-align: right;
+}
+
+div.editPassword button {
+	background-color: #00FF00;	
+	border: 2px solid #32CD32;
+	font-size: 12pt;
+	width: 100px;
+	color: white;
+}
