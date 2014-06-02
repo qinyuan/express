@@ -1,7 +1,19 @@
 <?php
-function select_last_orders() {
+function select_last_orders($group_fields, $value_fields) {
     $admin_id = get_admin_id();
     $pdo = new MyPdo();
+    $group_fields_str = join(',', $group_fields);
+    $value_fields_str = join(',', $value_fields);
+    $query = "SELECT $group_fields_str,$value_fields_str 
+        FROM (
+            SELECT MAX(order_id) AS order_id FROM orderitem
+            WHERE admin_id=$admin_id
+            GROUP BY $group_fields_str
+            ) AS lo
+        INNER JOIN orderitem USING(order_id)
+        WHERE admin_id=$admin_id
+        ORDER BY $group_fields_str";
+        /*
     $query = "select 
        cus_id,receiver,delivery,delivery_tel,consigner,yiwu_tel 
        from (
@@ -12,9 +24,12 @@ function select_last_orders() {
        inner join orderitem using(order_id)
        where admin_id=$admin_id
        order by cus_id,receiver";
+         */
     $pdo -> query($query);
     $last_orders = array();
     while ($row = $pdo -> fetch()) {
+        $last_orders[] = $row;
+        /*
         $cus_id = $row['cus_id'];
         if (!isset($last_orders[$cus_id])) {
             $last_orders[$cus_id] = array();
@@ -25,6 +40,7 @@ function select_last_orders() {
             'consigner' => $row['consigner'],
             'yiwu_tel' => $row['yiwu_tel'],
           );
+         */
      }
     return $last_orders;
 }
