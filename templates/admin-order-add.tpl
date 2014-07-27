@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/common.css" type="text/css" />
   <link rel="stylesheet" href="css/admin-common.css" type="text/css" />
   <link rel="stylesheet" href="css/admin-form.css" type="text/css" />
+  <link rel="stylesheet" href="css/admin-order-add.css" type="text/css" />
 </head>
 <body>
 <div class="body">
@@ -19,6 +20,8 @@
   {if isset($added_order_no)}
     <input type="hidden" id="addResult" value="订单{$added_order_no}添加成功" />
   {/if}
+  <div id="optionalInputDiv">
+  </div>
 </div>
 </body>
 <script src="js/jquery.js"></script>

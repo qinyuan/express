@@ -220,4 +220,26 @@ function get_admin_id() {
   global $admin_info;	
   return $admin_info['id'];
 }
+
+function create_latest_orders_json($key_fields, $value_fields, $debug) {
+    $orders =  select_latest_orders($key_fields, $value_fields);
+    $json_arr = array();
+    foreach ($orders as $order) {
+        $handle_arr = &$json_arr;
+        foreach ($key_fields as $key_field) {
+            $key_value = '_' . $order[$key_field];
+            if (!$debug) $key_value = urlencode($key_value);
+            if (!isset($handle_arr[$key_value])) {
+                $handle_arr[$key_value] = array(
+                    '__order_id__' => $order['order_id']
+                );
+            }
+            $handle_arr = &$handle_arr[$key_value];
+        }
+        foreach ($value_fields as $value_field) {
+            $handle_arr[] = urlencode($order[$value_field]);
+        }
+    }
+    return $debug ? $json_arr : json_encode($json_arr);
+}
 ?>

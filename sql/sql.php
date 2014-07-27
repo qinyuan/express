@@ -1,10 +1,10 @@
 <?php
-function select_last_orders($group_fields, $value_fields) {
+function select_latest_orders($group_fields, $value_fields) {
     $admin_id = get_admin_id();
     $pdo = new MyPdo();
     $group_fields_str = join(',', $group_fields);
     $value_fields_str = join(',', $value_fields);
-    $query = "SELECT $group_fields_str,$value_fields_str 
+    $query = "SELECT lo.order_id,$group_fields_str,$value_fields_str 
         FROM (
             SELECT MAX(order_id) AS order_id FROM orderitem
             WHERE admin_id=$admin_id
@@ -13,35 +13,11 @@ function select_last_orders($group_fields, $value_fields) {
         INNER JOIN orderitem USING(order_id)
         WHERE admin_id=$admin_id
         ORDER BY $group_fields_str";
-        /*
-    $query = "select 
-       cus_id,receiver,delivery,delivery_tel,consigner,yiwu_tel 
-       from (
-           select max(order_id) as order_id from orderitem 
-           where admin_id=$admin_id
-           group by cus_id,receiver
-           ) as lo 
-       inner join orderitem using(order_id)
-       where admin_id=$admin_id
-       order by cus_id,receiver";
-         */
     $pdo -> query($query);
     $last_orders = array();
     while ($row = $pdo -> fetch()) {
         $last_orders[] = $row;
-        /*
-        $cus_id = $row['cus_id'];
-        if (!isset($last_orders[$cus_id])) {
-            $last_orders[$cus_id] = array();
-          }
-        $last_orders[$cus_id][$row['receiver']] = array(
-            'delivery' => $row['delivery'],
-            'delivery_tel' => $row['delivery_tel'],
-            'consigner' => $row['consigner'],
-            'yiwu_tel' => $row['yiwu_tel'],
-          );
-         */
-     }
+    }
     return $last_orders;
 }
 

@@ -1,0 +1,15 @@
+div#optionalInputDiv{
+    background-color: #ffffff;
+    position: absolute;6
+    top: 80px;
+    left: 0;
+    min-height: 23px;
+    border: 1px solid #666666;
+    display: none;
+}
+
+div#optionalInputDiv p{
+    margin: 0;
+    padding: 2px 0;
+    cursor: pointer;
+}
